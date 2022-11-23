@@ -89,7 +89,7 @@ def detect(save_img=False):
 
     t0 = time.time()
     for path, img, im0s, vid_cap in dataset:
-    	info_before = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
+        info_before = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
         iters += 1
         img = torch.from_numpy(img).to(device)
         img = img.half() if half else img.float()  # uint8 to fp16/32
